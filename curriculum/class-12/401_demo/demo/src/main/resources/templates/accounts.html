@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+</head>
+<body>
+
+<div>
+    <!-- action is the path to our POST action, method = post -->
+    <form action="/accounts" method="post">
+        <!-- boring html inputs! the "name" matches the @RequestParam's on the controller -->
+        <input type="text" name="username"/>
+        <input type="text" name="password"/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+<ul th:each="account: ${accounts}">
+    <p> id <span th:text="${account.id}"></span></p>
+    <p> username <span th:text="${account.username}"></span></p>
+    <p> password <span th:text="${account.password}"></span></p>
+</ul>
+</body>
+</html>
