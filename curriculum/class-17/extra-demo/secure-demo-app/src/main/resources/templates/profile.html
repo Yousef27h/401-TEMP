@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+  <h1>User Profile</h1>
+  <main>
+      <h3 th:text="${user.username}">username</h3>
+      <img src="/me.jpg" />
+      <div>
+          <span th:text="${user.fullName}"></span>
+      </div>
+  </main>
+</body>
+</html>

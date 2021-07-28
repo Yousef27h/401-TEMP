@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bugs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <div th:each="bug : ${bugs}">
+        <h1><span th:text="${bug.id}"></span> <span th:text="${bug.name}"></span></h1>
+        <h1><span th:text="${bug.id} + '+' + ${bug.name}"></span></h1>
+        <h1><span th:text="${bug.id + '-' + bug.name}"></span></h1>
+        <div th:text="${bug.id}"></div>
+        <div th:text="${bug.name}"></div>
+        <div th:text="${bug.numberOfLegs}"></div>
+        <div th:text="${bug.cutenessScale}"></div>
+        <div th:text="${bug.typeOfBug}"></div>
+    </div>
+
+    <hr/>
+
+    <div th:each="location : ${locations}">
+        <div th:text="${location.id}"></div>
+        <div th:text="${location.name}"></div>
+    </div>
+
+    <form action="/bugfarm/create" method="post">
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="number" name="numberOfLegs" placeholder="Number of legs"/>
+        <input type="number" name="cutenessScale" placeholder="Cuteness Scale"/>
+        <input type="text" name="typeOfBug" placeholder="Type of bug"/>
+        <button type="submit">Create</button>
+    </form>
+</div>
+</body>
+</html>
