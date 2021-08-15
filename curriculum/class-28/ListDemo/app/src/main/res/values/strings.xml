@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ListDemo</string>
+    <string name="content_description_card_layout">This is a place holder image of a hamburger</string>
+    <string name="food_name">Food Name</string>
+</resources>

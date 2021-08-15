@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Locations</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <div th:each="location : ${locations}">
+        <div th:text="${location.id}"></div>
+        <div th:text="${location.name}"></div>
+        <div th:text="${location.maxOccupancy}"></div>
+        <div th:text="${location.terrainType}"></div>
+        <div th:text="${location.hasFoliage}"></div>
+    </div>
+    <form action="/locations/create" method="post">
+        <input type="text" name="name" placeholder="Name"/>
+        <input type="number" name="maxOccupancy" placeholder="Max Occupancy"/>
+        <input type="text" name="terrainType" placeholder="Terrain Type"/>
+        <!--<input type="ch" name="hasFoliage"/>-->
+        <button type="submit">Create</button>
+    </form>
+
+</div>
+</body>
+</html>

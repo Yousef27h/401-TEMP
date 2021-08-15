@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Bug</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <form action="/bugfarm/update" method="post">
+        <input type="hidden" name="id" th:value="${bug.id}" hidden/>
+        <input type="text" name="name" placeholder="Name" th:value="${bug.name}"/>
+        <input type="number" name="numberOfLegs" placeholder="Number of legs" th:value="${bug.numberOfLegs}"/>
+        <input type="number" name="cutenessScale" placeholder="Cuteness Scale" th:value="${bug.cutenessScale}"/>
+        <input type="text" name="typeOfBug" placeholder="Type of bug" th:value="${bug.typeOfBug}"/>
+        <select name="location">
+            <option th:each="location : ${locations}"
+                    th:text="${location.name}"
+                    th:value="${location.id}"
+                    th:selected="${bug.location.id==location.id}"></option>
+        </select>
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

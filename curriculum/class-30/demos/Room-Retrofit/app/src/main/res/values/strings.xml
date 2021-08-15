@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Room</string>
+    <string name="delete">Delete</string>
+    <string name="food_name">Food Name</string>
+    <string name="content_description_card_layout">Image of a hamburger</string>
+    <string name="qty">QTY</string>
+
+    <string-array name="foods">
+        <item>Apple</item>
+        <item>Humus</item>
+        <item>Hamburger</item>
+    </string-array>
+</resources>

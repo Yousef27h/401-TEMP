@@ -1,0 +1,20 @@
+behaviours/Squeaking.java
+ behaviours.Squeaking
+model/Duck.java
+ model.Duck
+behaviours/Swim.java
+ behaviours.Swim
+model/RedheadDuck.java
+ model.RedheadDuck
+behaviours/Eat.java
+ behaviours.Eat
+model/WoodenDuck.java
+ model.WoodenDuck
+behaviours/Quacking.java
+ behaviours.Quacking
+model/RubberDuck.java
+ model.RubberDuck
+model/MallardDuck.java
+ model.MallardDuck
+Simulation.java
+ Simulation
