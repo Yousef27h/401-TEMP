@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Budget</string>
+    <string name="app_title">Budget Expenses</string>
+    <string name="set_account">Set account to track expenses</string>
+    <string name="add_expense">Add</string>
+    <string name="expense">Expense</string>
+    <string name="cost">Cost</string>
+    <string name="Description">Desc</string>
+    <string name="delete">Delete</string>
+    <string name="content_description_card_expense">Image of a dollar sign</string>
+</resources>
