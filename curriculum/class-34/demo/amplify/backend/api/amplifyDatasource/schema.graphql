@@ -1,0 +1,17 @@
+type Task @model {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+type Note @model {
+  id: ID!
+  content: String!
+}
+
+type Expense @model {
+  id: ID!
+  name: String!
+  description: String
+  cost: Float
+}
