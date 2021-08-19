@@ -1,0 +1,235 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateTask(
+  $input: CreateTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  createTask(input: $input, condition: $condition) {
+    id
+    title
+    description
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTask(
+  $input: UpdateTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  updateTask(input: $input, condition: $condition) {
+    id
+    title
+    description
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTask(
+  $input: DeleteTaskInput!
+  $condition: ModelTaskConditionInput
+) {
+  deleteTask(input: $input, condition: $condition) {
+    id
+    title
+    description
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateNote(
+  $input: CreateNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  createNote(input: $input, condition: $condition) {
+    id
+    content
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateNote(
+  $input: UpdateNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  updateNote(input: $input, condition: $condition) {
+    id
+    content
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteNote(
+  $input: DeleteNoteInput!
+  $condition: ModelNoteConditionInput
+) {
+  deleteNote(input: $input, condition: $condition) {
+    id
+    content
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateAccount(
+  $input: CreateAccountInput!
+  $condition: ModelAccountConditionInput
+) {
+  createAccount(input: $input, condition: $condition) {
+    id
+    name
+    description
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateAccount(
+  $input: UpdateAccountInput!
+  $condition: ModelAccountConditionInput
+) {
+  updateAccount(input: $input, condition: $condition) {
+    id
+    name
+    description
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteAccount(
+  $input: DeleteAccountInput!
+  $condition: ModelAccountConditionInput
+) {
+  deleteAccount(input: $input, condition: $condition) {
+    id
+    name
+    description
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateExpense(
+  $input: CreateExpenseInput!
+  $condition: ModelExpenseConditionInput
+) {
+  createExpense(input: $input, condition: $condition) {
+    id
+    accountId
+    name
+    description
+    cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateExpense(
+  $input: UpdateExpenseInput!
+  $condition: ModelExpenseConditionInput
+) {
+  updateExpense(input: $input, condition: $condition) {
+    id
+    accountId
+    name
+    description
+    cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteExpense(
+  $input: DeleteExpenseInput!
+  $condition: ModelExpenseConditionInput
+) {
+  deleteExpense(input: $input, condition: $condition) {
+    id
+    accountId
+    name
+    description
+    cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}

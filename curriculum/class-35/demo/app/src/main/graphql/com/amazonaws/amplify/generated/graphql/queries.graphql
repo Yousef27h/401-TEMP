@@ -1,0 +1,257 @@
+# this is an auto generated file. This will be overwritten
+query SyncTasks(
+  $filter: ModelTaskFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncTasks(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      title
+      description
+      status
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetTask($id: ID!) {
+  getTask(id: $id) {
+    id
+    title
+    description
+    status
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListTasks(
+  $filter: ModelTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
+      status
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncNotes(
+  $filter: ModelNoteFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncNotes(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      content
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetNote($id: ID!) {
+  getNote(id: $id) {
+    id
+    content
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListNotes(
+  $filter: ModelNoteFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      content
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncAccounts(
+  $filter: ModelAccountFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncAccounts(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetAccount($id: ID!) {
+  getAccount(id: $id) {
+    id
+    name
+    description
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListAccounts(
+  $filter: ModelAccountFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAccounts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncExpenses(
+  $filter: ModelExpenseFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncExpenses(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      accountId
+      name
+      description
+      cost
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetExpense($id: ID!) {
+  getExpense(id: $id) {
+    id
+    accountId
+    name
+    description
+    cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListExpenses(
+  $filter: ModelExpenseFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listExpenses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      accountId
+      name
+      description
+      cost
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}

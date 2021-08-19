@@ -1,0 +1,30 @@
+type Task @model {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+
+type Note @model {
+  id: ID!
+  content: String!
+}
+
+type Account @model {
+  id: ID!
+  name: String!
+  description: String
+  balance: Float
+  expences: [Expense] @connection(keyName: "expenseItem", fields: ["id"])
+}
+
+type Expense
+@model
+@key(name: "expenseItem", fields: ["accountId"]) {
+  id: ID!
+  accountId: ID!
+  name: String!
+  description: String
+  cost: Float
+  account: Account! @connection(fields: ["accountId"])
+}
