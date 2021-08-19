@@ -1,11 +1,11 @@
 # this is an auto generated file. This will be overwritten
-query SyncTasks(
-  $filter: ModelTaskFilterInput
+query SyncAccounts(
+  $filter: ModelAccountFilterInput
   $limit: Int
   $nextToken: String
   $lastSync: AWSTimestamp
 ) {
-  syncTasks(
+  syncAccounts(
     filter: $filter
     limit: $limit
     nextToken: $nextToken
@@ -13,9 +13,9 @@ query SyncTasks(
   ) {
     items {
       id
-      title
+      name
       description
-      status
+      balance
       _version
       _deleted
       _lastChangedAt
@@ -26,12 +26,16 @@ query SyncTasks(
     startedAt
   }
 }
-query GetTask($id: ID!) {
-  getTask(id: $id) {
+query GetAccount($id: ID!) {
+  getAccount(id: $id) {
     id
-    title
+    name
     description
-    status
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -39,72 +43,17 @@ query GetTask($id: ID!) {
     updatedAt
   }
 }
-query ListTasks(
-  $filter: ModelTaskFilterInput
+query ListAccounts(
+  $filter: ModelAccountFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listAccounts(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      title
+      name
       description
-      status
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
-  }
-}
-query SyncNotes(
-  $filter: ModelNoteFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncNotes(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      content
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
-  }
-}
-query GetNote($id: ID!) {
-  getNote(id: $id) {
-    id
-    content
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-query ListNotes(
-  $filter: ModelNoteFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      content
+      balance
       _version
       _deleted
       _lastChangedAt
@@ -129,6 +78,7 @@ query SyncExpenses(
   ) {
     items {
       id
+      accountId
       name
       description
       cost
@@ -145,9 +95,21 @@ query SyncExpenses(
 query GetExpense($id: ID!) {
   getExpense(id: $id) {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -163,6 +125,7 @@ query ListExpenses(
   listExpenses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      accountId
       name
       description
       cost

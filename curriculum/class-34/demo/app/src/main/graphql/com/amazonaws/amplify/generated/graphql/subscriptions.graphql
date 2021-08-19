@@ -1,10 +1,14 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateTask {
-  onCreateTask {
+subscription OnCreateAccount {
+  onCreateAccount {
     id
-    title
+    name
     description
-    status
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -12,12 +16,16 @@ subscription OnCreateTask {
     updatedAt
   }
 }
-subscription OnUpdateTask {
-  onUpdateTask {
+subscription OnUpdateAccount {
+  onUpdateAccount {
     id
-    title
+    name
     description
-    status
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -25,45 +33,16 @@ subscription OnUpdateTask {
     updatedAt
   }
 }
-subscription OnDeleteTask {
-  onDeleteTask {
+subscription OnDeleteAccount {
+  onDeleteAccount {
     id
-    title
+    name
     description
-    status
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-subscription OnCreateNote {
-  onCreateNote {
-    id
-    content
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-subscription OnUpdateNote {
-  onUpdateNote {
-    id
-    content
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-subscription OnDeleteNote {
-  onDeleteNote {
-    id
-    content
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -74,9 +53,21 @@ subscription OnDeleteNote {
 subscription OnCreateExpense {
   onCreateExpense {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -87,9 +78,21 @@ subscription OnCreateExpense {
 subscription OnUpdateExpense {
   onUpdateExpense {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -100,9 +103,21 @@ subscription OnUpdateExpense {
 subscription OnDeleteExpense {
   onDeleteExpense {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt

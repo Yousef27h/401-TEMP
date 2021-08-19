@@ -1,13 +1,17 @@
 # this is an auto generated file. This will be overwritten
-mutation CreateTask(
-  $input: CreateTaskInput!
-  $condition: ModelTaskConditionInput
+mutation CreateAccount(
+  $input: CreateAccountInput!
+  $condition: ModelAccountConditionInput
 ) {
-  createTask(input: $input, condition: $condition) {
+  createAccount(input: $input, condition: $condition) {
     id
-    title
+    name
     description
-    status
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -15,15 +19,19 @@ mutation CreateTask(
     updatedAt
   }
 }
-mutation UpdateTask(
-  $input: UpdateTaskInput!
-  $condition: ModelTaskConditionInput
+mutation UpdateAccount(
+  $input: UpdateAccountInput!
+  $condition: ModelAccountConditionInput
 ) {
-  updateTask(input: $input, condition: $condition) {
+  updateAccount(input: $input, condition: $condition) {
     id
-    title
+    name
     description
-    status
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -31,57 +39,19 @@ mutation UpdateTask(
     updatedAt
   }
 }
-mutation DeleteTask(
-  $input: DeleteTaskInput!
-  $condition: ModelTaskConditionInput
+mutation DeleteAccount(
+  $input: DeleteAccountInput!
+  $condition: ModelAccountConditionInput
 ) {
-  deleteTask(input: $input, condition: $condition) {
+  deleteAccount(input: $input, condition: $condition) {
     id
-    title
+    name
     description
-    status
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-mutation CreateNote(
-  $input: CreateNoteInput!
-  $condition: ModelNoteConditionInput
-) {
-  createNote(input: $input, condition: $condition) {
-    id
-    content
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-mutation UpdateNote(
-  $input: UpdateNoteInput!
-  $condition: ModelNoteConditionInput
-) {
-  updateNote(input: $input, condition: $condition) {
-    id
-    content
-    _version
-    _deleted
-    _lastChangedAt
-    createdAt
-    updatedAt
-  }
-}
-mutation DeleteNote(
-  $input: DeleteNoteInput!
-  $condition: ModelNoteConditionInput
-) {
-  deleteNote(input: $input, condition: $condition) {
-    id
-    content
+    balance
+    expences {
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -95,9 +65,21 @@ mutation CreateExpense(
 ) {
   createExpense(input: $input, condition: $condition) {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -111,9 +93,21 @@ mutation UpdateExpense(
 ) {
   updateExpense(input: $input, condition: $condition) {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -127,9 +121,21 @@ mutation DeleteExpense(
 ) {
   deleteExpense(input: $input, condition: $condition) {
     id
+    accountId
     name
     description
     cost
+    account {
+      id
+      name
+      description
+      balance
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
     _version
     _deleted
     _lastChangedAt
