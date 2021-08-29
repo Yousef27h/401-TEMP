@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "351760711178",
+    "project_id": "budgeto-94d60",
+    "storage_bucket": "budgeto-94d60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351760711178:android:bcfca8a450ee24fb6729f3",
+        "android_client_info": {
+          "package_name": "com.recurjun.budgeto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351760711178-p2bo47omucmamsq1lfj7tls59l99im0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIr4KGBmEW1Nc9oCCvpI__LHthusVGWsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "351760711178-p2bo47omucmamsq1lfj7tls59l99im0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
